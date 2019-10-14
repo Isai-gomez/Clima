@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Formulario from "./Formulario";
+import Error from "./Error";
 class App extends React.Component {
   constructor() {
     super();
@@ -23,10 +24,16 @@ class App extends React.Component {
     }
   };
   render() {
+    const error = this.state.error;
+    let resultado;
+    if (error) {
+      resultado = <Error mensaje={"Ambos campos son obligatorios"}></Error>;
+    }
     return (
       <div className="app">
         <Header titulo={"Clima React"}></Header>
         <Formulario datosFormulario={this.datosEnviado}></Formulario>
+        {resultado}
       </div>
     );
   }
