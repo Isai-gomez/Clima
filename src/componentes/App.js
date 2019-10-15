@@ -12,8 +12,10 @@ class App extends React.Component {
       resultado: {}
     };
   }
-  componentDidUpdate() {
-    this.consultarApi();
+  componentDidUpdate(prevProp, prevState) {
+    if (prevState.consulta !== this.state.consulta) {
+      this.consultarApi();
+    }
   }
   consultarApi = () => {
     const { ciudad, pais } = this.state.consulta;
