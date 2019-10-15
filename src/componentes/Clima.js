@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Clima extends Component {
   mostrarResultado = () => {
-    const { name, weather, main } = this.props.resultado1;
+    const { name, weather, main } = this.props.resultado;
     if (!name || !weather || !main) return null;
     const kelvin = 273.15;
     const alt = `Clima de ${name}`;
