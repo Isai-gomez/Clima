@@ -6,9 +6,20 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      error: ""
+      error: "",
+      consulta: {}
     };
   }
+  componentDidUpdate() {
+    this.consultarApi();
+  }
+  consultarApi = () => {
+    const { ciudad, pais } = this.state.consulta;
+    if (!ciudad || !pais) return null;
+    const apiId = "f9ec6f57483c8dae6d54c201679a9d7b";
+    let url = `http://samples.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}uk&appid=${apiId}`;
+    console.log(url);
+  };
   componentDidMount() {
     this.setState({
       error: false
@@ -20,7 +31,9 @@ class App extends React.Component {
         error: true
       });
     } else {
-      console.log("Correcto");
+      this.setState({
+        consulta: respuesta
+      });
     }
   };
   render() {

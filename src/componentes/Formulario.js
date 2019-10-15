@@ -25,7 +25,7 @@ class Formulario extends Component {
             <form onSubmit={this.buscarClima}>
               <div className="input-field col s12 m8 l4 offset-m2">
                 <input id="ciudad" type="text" ref={this.ciudadRef} />
-                <label htmlfor="ciudad">Ciudad:</label>
+                <label htmlFor="ciudad">Ciudad:</label>
               </div>
               <div className="input-field col s12 m8 l4 offset-m2">
                 <select ref={this.paisRef}>
@@ -40,7 +40,7 @@ class Formulario extends Component {
                   <option value="MX">México</option>
                   <option value="PE">Perú</option>
                 </select>
-                <label htmlfor="pais">Pais:</label>
+                <label htmlFor="pais">Pais:</label>
               </div>
               <div className="input-field col s12 m8 l4 offset-2 buscador">
                 <input
