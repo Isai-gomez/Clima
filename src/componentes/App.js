@@ -60,7 +60,7 @@ class App extends React.Component {
     if (error) {
       resultado = <Error mensaje={"Ambos campos son obligatorios"}></Error>;
     } else {
-      resultado = <Clima resultado={this.state.resultado} />;
+      resultado = <Clima resultado1={this.state.resultado} />;
     }
     return (
       <div className="app">
